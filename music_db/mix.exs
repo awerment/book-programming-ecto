@@ -17,7 +17,10 @@ defmodule MusicDB.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      aliases: aliases()
+      aliases: aliases(),
+      preferred_cli_env: [
+        "test.watch": :test
+      ]
     ]
   end
 
@@ -38,7 +41,8 @@ defmodule MusicDB.MixProject do
     [
       {:ecto_sql, "~> 3.7.1"},
       {:postgrex, "~> 0.15.13"},
-      {:jason, "~> 1.2.2"}
+      {:jason, "~> 1.2.2"},
+      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false}
     ]
   end
 
