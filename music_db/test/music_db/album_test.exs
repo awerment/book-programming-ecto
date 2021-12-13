@@ -16,6 +16,7 @@ defmodule MusicDB.AlbumTest do
     assert new_album.title == "Giant Steps"
   end
 
+  @tag :skip
   test "valid changeset" do
     params = %{"title" => "Dark Side of the Moon"}
     changeset = Album.changeset(%Album{}, params)
@@ -23,6 +24,7 @@ defmodule MusicDB.AlbumTest do
     assert album.title == "Dark Side of the Moon"
   end
 
+  @tag :skip
   test "valid changeset without insert" do
     params = %{"title" => "Dark Side of the Moon"}
     changeset = Album.changeset(%Album{}, params)
