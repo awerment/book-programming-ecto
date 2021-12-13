@@ -1,4 +1,4 @@
-defmodule GettingStarted.Ex04Test do
+defmodule GettingStarted04Test do
   use MusicDB.DataCase, async: true
 
   test "executing raw sql" do

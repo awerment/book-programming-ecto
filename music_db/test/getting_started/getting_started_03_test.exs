@@ -1,4 +1,4 @@
-defmodule GettingStarted.Ex03Test do
+defmodule GettingStarted03Test do
   use MusicDB.DataCase, async: true
 
   test "insert_all with :returning" do

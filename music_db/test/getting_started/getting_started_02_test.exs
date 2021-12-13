@@ -1,4 +1,4 @@
-defmodule GettingStarted.Ex02Test do
+defmodule GettingStarted02Test do
   use MusicDB.DataCase, async: true
 
   test "insert_all for a single record" do

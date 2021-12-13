@@ -1,4 +1,4 @@
-defmodule GettingStarted.Ex01Test do
+defmodule GettingStarted01Test do
   use MusicDB.DataCase
   alias MusicDB.Artist
 
