@@ -1,6 +1,31 @@
 defmodule Schema04 do
   use MusicDB.DataCase
-  use Support.Schemas, :artist
+
+  defmodule Artist do
+    use Ecto.Schema
+
+    schema "artists" do
+      field(:name)
+      field(:birth_date, :date)
+      field(:death_date, :date)
+      timestamps()
+
+      has_many(:albums, Schema04.Album)
+      has_many(:tracks, through: [:albums, :tracks])
+    end
+  end
+
+  defmodule Album do
+    use Ecto.Schema
+
+    schema "albums" do
+      field(:title, :string)
+      field(:release_date, :date)
+
+      has_many(:tracks, Schema04.Track)
+      belongs_to(:artist, Schema04.Artist)
+    end
+  end
 
   test "for comparison: inserting without schema" do
     assert {1, nil} == Repo.insert_all("artists", [[name: "John Coltrane"]])

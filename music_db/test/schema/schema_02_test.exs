@@ -1,6 +1,19 @@
 defmodule Schema02Test do
   use MusicDB.DataCase, async: true
-  use Support.Schemas, :track
+
+  defmodule Track do
+    use Ecto.Schema
+
+    schema "tracks" do
+      field(:title, :string)
+      field(:duration, :integer)
+      field(:index, :integer)
+      field(:number_of_plays, :integer)
+      timestamps()
+
+      # belongs_to(:album, Album)
+    end
+  end
 
   test "annoyances when working with schema-less queries" do
     # notice we need to typecast the parameter and also specify a select clause

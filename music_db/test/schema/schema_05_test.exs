@@ -1,6 +1,17 @@
 defmodule Schema05Test do
   use MusicDB.DataCase
-  use Support.Schemas, :track
+
+  defmodule Track do
+    use Ecto.Schema
+
+    schema "tracks" do
+      field(:title, :string)
+      field(:duration, :integer)
+      field(:index, :integer)
+      field(:number_of_plays, :integer)
+      timestamps()
+    end
+  end
 
   test "comparison: delete_all with table name" do
     assert {33, nil} = Repo.delete_all("tracks")
