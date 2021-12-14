@@ -100,4 +100,4 @@ albums_by_miles = from a in "albums", as: :albums,
 has_named_binding?(albums_by_miles, :albums)
 #=> true
 
-assert has_named_binding?(albums_by_miles, :albums) == true
+assert has_named_binding?(albums_by_miles, :albums)
