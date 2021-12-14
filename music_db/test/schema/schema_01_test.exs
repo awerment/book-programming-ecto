@@ -1,4 +1,4 @@
-defmodule Schem01Test do
+defmodule Schema01Test do
   use MusicDB.DataCase, async: true
 
   defmodule Track do
