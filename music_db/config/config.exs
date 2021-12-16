@@ -37,7 +37,8 @@ config :music_db, MusicDB.Repo,
   database: "music_db",
   hostname: "localhost",
   # this is not normally needed - we put it here to support an example of
-  migration_lock: nil
+  migration_lock: nil,
+  types: MusicDB.PostgrexTypes
 
 # creating an index with the `concurrently` option set to true
 
