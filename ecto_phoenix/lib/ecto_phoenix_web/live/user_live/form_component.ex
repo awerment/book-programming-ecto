@@ -2,6 +2,7 @@ defmodule EctoPhoenixWeb.UserLive.FormComponent do
   use EctoPhoenixWeb, :live_component
 
   alias EctoPhoenix.Accounts
+  alias EctoPhoenix.Accounts.Address
 
   @impl true
   def update(%{user: user} = assigns, socket) do

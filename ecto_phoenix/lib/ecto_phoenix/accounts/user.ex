@@ -6,7 +6,7 @@ defmodule EctoPhoenix.Accounts.User do
   schema "users" do
     field :age, :integer
     field :name, :string
-    embeds_one :address, Address
+    embeds_many :addresses, Address
 
     timestamps()
   end
@@ -16,7 +16,7 @@ defmodule EctoPhoenix.Accounts.User do
     user
     |> cast(attrs, [:name, :age])
     |> validate_required([:name])
-    |> cast_embed(:address)
+    |> cast_embed(:addresses)
     |> validate_number(:age, greater_than: 0, message: "you are not yet born")
   end
 end

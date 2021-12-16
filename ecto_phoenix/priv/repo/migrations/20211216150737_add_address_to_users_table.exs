@@ -3,7 +3,7 @@ defmodule EctoPhoenix.Repo.Migrations.AddAddressToUsersTable do
 
   def change do
     alter table("users") do
-      add :address, :map
+      add :addresses, {:array, :map}
     end
   end
 end

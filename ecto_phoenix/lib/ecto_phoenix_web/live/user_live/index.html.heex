@@ -18,8 +18,7 @@
     <tr>
       <th>Name</th>
       <th>Age</th>
-      <th>Street</th>
-      <th>City</th>
+      <th>Addresses</th>
 
       <th></th>
     </tr>
@@ -29,8 +28,13 @@
       <tr id={"user-#{user.id}"}>
         <td><%= user.name %></td>
         <td><%= user.age %></td>
-        <td><%= user.address.street %></td>
-        <td><%= user.address.city %></td>
+        <td>
+          <ul>
+            <%= for address <- user.addresses do %>
+              <li>Street: <%= address.street %>, City: <%= address.city %></li>
+            <% end %>
+          </ul>
+        </td>
 
         <td>
           <span><%= live_redirect "Show", to: Routes.user_show_path(@socket, :show, user) %></span>

@@ -17,7 +17,7 @@
     <%= number_input f, :age %>
     <%= error_tag f, :age %>
 
-    <%= inputs_for f, :address, fn fa -> %>
+    <%= inputs_for f, :addresses, [append: [%Address{}]], fn fa -> %>
       <%= label fa, :street %>
       <%= text_input fa, :street %>
       <%= error_tag fa, :street %>
