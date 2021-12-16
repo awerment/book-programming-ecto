@@ -16,6 +16,16 @@
     <%= label f, :age %>
     <%= number_input f, :age %>
     <%= error_tag f, :age %>
+
+    <%= inputs_for f, :address, fn fa -> %>
+      <%= label fa, :street %>
+      <%= text_input fa, :street %>
+      <%= error_tag fa, :street %>
+
+      <%= label fa, :city %>
+      <%= text_input fa, :city %>
+      <%= error_tag fa, :city %>
+    <% end %>
   
     <div>
       <%= submit "Save", phx_disable_with: "Saving..." %>

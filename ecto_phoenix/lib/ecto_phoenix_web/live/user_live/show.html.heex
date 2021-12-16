@@ -25,6 +25,17 @@
     <%= @user.age %>
   </li>
 
+  <li>
+    <strong>Street:</strong>
+    <%= @user.address.street %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @user.address.city %>
+  </li>
+
+
 </ul>
 
 <span><%= live_patch "Edit", to: Routes.user_show_path(@socket, :edit, @user), class: "button" %></span> |
