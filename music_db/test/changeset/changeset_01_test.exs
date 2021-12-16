@@ -29,6 +29,6 @@ defmodule Changeset01Test do
         insert_artist(%{some_key: "unknown"})
       end)
 
-    ~S([name: {"can't be blank", [validation: :required]}]\n) == output
+    assert ~S([name: {"can't be blank", [validation: :required]}]\n) == output
   end
 end
