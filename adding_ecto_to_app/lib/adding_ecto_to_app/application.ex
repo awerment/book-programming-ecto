@@ -8,7 +8,8 @@ defmodule AddingEctoToApp.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      AddingEctoToApp.Repo
+      AddingEctoToApp.Repo,
+      AddingEctoToApp.OtherRepo
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
