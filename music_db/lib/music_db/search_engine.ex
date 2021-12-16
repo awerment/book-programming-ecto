@@ -16,6 +16,10 @@ defmodule SearchEngine do
     raise "Failed to update search engine"
   end
 
+  def fail(_item) do
+    {:error, "Failed to update search engine"}
+  end
+
   def update(item) do
     # search engine logic happens here...
     {:ok, item}
