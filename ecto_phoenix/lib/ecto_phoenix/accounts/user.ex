@@ -14,6 +14,6 @@ defmodule EctoPhoenix.Accounts.User do
     user
     |> cast(attrs, [:name, :age])
     |> validate_required([:name])
-    |> validate_number(:age, greater_han: 0, message: "you are not yet born")
+    |> validate_number(:age, greater_than: 0, message: "you are not yet born")
   end
 end
